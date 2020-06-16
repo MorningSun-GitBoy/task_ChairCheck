@@ -3,7 +3,7 @@ import numpy as np
  
  
 # step1：加载图片，转成灰度图
-image = cv2.imread("D:/DATA/Workspace/Python/task_ChairCheck/graph/IMG_20171206_143323.jpg")
+image = cv2.imread("graph/IMG_20171206_143323.jpg")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
  
 # step2:用Sobel算子计算x，y方向上的梯度，之后在x方向上减去y方向上的梯度，通过这个减法，我们留下具有高水平梯度和低垂直梯度的图像区域。
