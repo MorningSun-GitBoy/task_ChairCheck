@@ -3,7 +3,7 @@ import os
 
 def classify(src,classifier):
     gray=cv2.cvtColor(src,cv2.COLOR_BGR2GRAY)
-    obj = classifier.detectMultiScale(gray,scaleFactor = 1.15, minNeighbors = 5,minSize=(20,20),maxSize=(60,60)) 
+    obj = classifier.detectMultiScale(gray,scaleFactor = 1.15, minNeighbors = 5,minSize=(20,20),maxSize=(60,60),flags=cv2.CASCADE_SCALE_IMAGE) 
     for (x,y,w,h) in obj:
         cv2.rectangle(src,(x,y),(x+w,y+w),(255,0,0),2) #画框，（x,y）为识别物体的左上角顶点，（w，h）为宽和高
     return src
